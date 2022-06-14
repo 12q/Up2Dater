@@ -1,5 +1,5 @@
 //
-//  CheckerError.swift
+//  LocalError.swift
 //  up2dater
 //
 //  Created by 12q on 14.06.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CheckerError: Error {
+public enum LocalError: Error {
     case bundleInfoFailure
     case bundleIdentifierFailure
     case bundleShortVersionFailure
@@ -18,7 +18,7 @@ public enum CheckerError: Error {
     case noResultInfo
 }
 
-public extension CheckerError {
+public extension LocalError {
     var description: String {
         switch self {
             case .bundleInfoFailure:

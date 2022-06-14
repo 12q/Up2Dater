@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RequestInfo {
+struct RequestModel {
     let version: String
     let identifier: String
     
@@ -22,7 +22,7 @@ struct RequestInfo {
 
 // MARK: - Constants
 
-extension RequestInfo {
+extension RequestModel {
     enum C {
         static let appStorePath = "http://itunes.apple.com/lookup?bundleId="
     }

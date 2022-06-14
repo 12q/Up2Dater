@@ -7,10 +7,10 @@
 
 import Foundation
 
-public class Checker {
+public class Up2Dater {
     public init() {}
     
-    public func hasNewVersion(completion: @escaping ((Result<Bool, CheckerError>) -> ())) {
+    public func isNewVersionAvailable(completion: @escaping ((Result<VersionModel?, LocalError>) -> ())) {
         switch buildRequestInfo {
             case .success(let info):
                 guard let appStoreURL = info.appStoreURL else {
@@ -30,10 +30,10 @@ public class Checker {
 
 // MARK: - Load & Decode
 
-private extension Checker {
+extension Up2Dater {
     func loadRequest(_ request: URLRequest,
-                     requestInfo: RequestInfo,
-                     completion: @escaping ((Result<Bool, CheckerError>) -> ())) {
+                     requestInfo: RequestModel,
+                     completion: @escaping ((Result<VersionModel?, LocalError>) -> ())) {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(.urlRequestFailure(error)))
@@ -46,13 +46,22 @@ private extension Checker {
             
             let decoder = JSONDecoder()
             do {
-                let model = try decoder.decode(StoreResult.self, from: data)
+                let model = try decoder.decode(ResponseModel.self, from: data)
                 guard let info = model.results.first else {
                     completion(.failure(.noResultInfo))
                     return
                 }
                 let isNewer = info.isNewer(then: requestInfo.version)
-                completion(.success(isNewer))
+                guard isNewer else {
+                    completion(.success(nil))
+                    return
+                }
+                let newVersion = VersionModel(
+                    appId: "\(info.trackId)",
+                    version: info.version,
+                    releaseNotes: info.releaseNotes
+                )
+                completion(.success(newVersion))
             } catch let error {
                 completion(.failure(.jsonDecodeFailure(error)))
             }
@@ -62,8 +71,8 @@ private extension Checker {
 
 // MARK: - Builders
 
-private extension Checker {
-    var buildRequestInfo: Result<RequestInfo, CheckerError> {
+extension Up2Dater {
+    var buildRequestInfo: Result<RequestModel, LocalError> {
         guard let infoDict = Bundle.main.infoDictionary else {
             return .failure(.bundleInfoFailure)
         }
@@ -83,7 +92,7 @@ private extension Checker {
 
 // MARK: - Constants
 
-private extension Checker {
+extension Up2Dater {
     enum C {
         static let versionKey = "CFBundleShortVersionString"
         static let identifierKey = "CFBundleIdentifier"
