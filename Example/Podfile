@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Up2Dater_Tests' do
+  pod 'Up2Dater', :path => '../'
+  
+  
+end
