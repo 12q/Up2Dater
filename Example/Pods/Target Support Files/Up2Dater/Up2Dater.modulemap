@@ -1,0 +1,6 @@
+framework module Up2Dater {
+  umbrella header "Up2Dater-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,27 +9,20 @@
 Pod::Spec.new do |s|
   s.name             = 'Up2Dater'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Up2Dater.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'Keep the app up to date.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  Informs about the new available in the AppStore
+  Fethces the JSON from the AppStore, compares correctly the latest version with the local bundle.
+  DESC
 
-  s.homepage         = 'https://github.com/Slava Plisco/Up2Dater'
+  s.homepage         = 'https://github.com/12q/Up2Dater'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Slava Plisco' => 'observleer@gmail.com' }
-  s.source           = { :git => 'https://github.com/Slava Plisco/Up2Dater.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.source           = { :git => 'https://github.com/12q/Up2Dater.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/observleer'
+  s.swift_versions = '4.2'
   s.ios.deployment_target = '9.0'
-
   s.source_files = 'Up2Dater/Classes/**/*'
   
   # s.resource_bundles = {

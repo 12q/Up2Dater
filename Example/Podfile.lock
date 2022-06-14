@@ -1,0 +1,16 @@
+PODS:
+  - Up2Dater (0.1.0)
+
+DEPENDENCIES:
+  - Up2Dater (from `../`)
+
+EXTERNAL SOURCES:
+  Up2Dater:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Up2Dater: 818e9f554b8253edb120fedbe48fbe7505913d43
+
+PODFILE CHECKSUM: 138b501ee7e45790d61766136072307bc9bf6629
+
+COCOAPODS: 1.11.3

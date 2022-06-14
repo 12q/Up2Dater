@@ -12,12 +12,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E8DFBE065E43E15AB923D7E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4E8DFBE065E43E15AB923D7E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Up2Dater_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Up2Dater_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		78B439F213CFEE7CDD6A0528 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A255C2C4F13CC6E66A6404AA /* Up2Dater.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Up2Dater.podspec; path = ../Up2Dater.podspec; sourceTree = "<group>"; };
+		78B439F213CFEE7CDD6A0528 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A255C2C4F13CC6E66A6404AA /* Up2Dater.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Up2Dater.podspec; path = ../Up2Dater.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8874541E92B47D363A6E786 /* Pods-Up2Dater_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Up2Dater_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Up2Dater_Tests/Pods-Up2Dater_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D65CDD611237E870CF286F8D /* Pods-Up2Dater_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Up2Dater_Tests.release.xcconfig"; path = "Target Support Files/Pods-Up2Dater_Tests/Pods-Up2Dater_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E362627936F39E346A329BDE /* Pods_Up2Dater_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Up2Dater_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +41,6 @@
 				A8874541E92B47D363A6E786 /* Pods-Up2Dater_Tests.debug.xcconfig */,
 				D65CDD611237E870CF286F8D /* Pods-Up2Dater_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -131,10 +130,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
@@ -147,6 +142,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
