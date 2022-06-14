@@ -37,7 +37,7 @@ func checkAvailableUpdate() {
                     self?.presentUpdateAlert(for: version)
                 }
             case .failure(let error):
-                Logger.log(error.description)
+                print(error.description)
         }
     }
 }
