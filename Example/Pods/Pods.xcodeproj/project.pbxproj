@@ -11,11 +11,11 @@
 		2C7076602269B8E2B3DE926153767827 /* Pods-Up2Dater_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7916B2256146DEAB64A07A0EFE2EA184 /* Pods-Up2Dater_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56BB602A729A40748CE9868BC5505816 /* Up2Dater-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F87B8042A6CC0C7CCCBF3C3006DBC0 /* Up2Dater-dummy.m */; };
 		ACFABD7532C461615D99CA68874AB126 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D8B6487F2858CC55001E05F2 /* CheckerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487A2858CC55001E05F2 /* CheckerError.swift */; };
-		D8B648802858CC55001E05F2 /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487B2858CC55001E05F2 /* RequestInfo.swift */; };
-		D8B648812858CC55001E05F2 /* StoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487C2858CC55001E05F2 /* StoreResult.swift */; };
-		D8B648822858CC55001E05F2 /* AppStoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487D2858CC55001E05F2 /* AppStoreInfo.swift */; };
-		D8B648832858CC55001E05F2 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487E2858CC55001E05F2 /* AppStore.swift */; };
+		D8B6487F2858CC55001E05F2 /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487A2858CC55001E05F2 /* LocalError.swift */; };
+		D8B648802858CC55001E05F2 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487B2858CC55001E05F2 /* RequestModel.swift */; };
+		D8B648812858CC55001E05F2 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487C2858CC55001E05F2 /* ResponseModel.swift */; };
+		D8B648832858CC55001E05F2 /* Up2Dater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487E2858CC55001E05F2 /* Up2Dater.swift */; };
+		D8B648872858D27F001E05F2 /* VersionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B648862858D27F001E05F2 /* VersionModel.swift */; };
 		EE5064B806879F5D96820011FC187A1C /* Up2Dater-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA300027B3AD4D7CC130B0755002A127 /* Up2Dater-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDCD15B2CBA7903E2859604B587986C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -52,11 +52,11 @@
 		AA300027B3AD4D7CC130B0755002A127 /* Up2Dater-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Up2Dater-umbrella.h"; sourceTree = "<group>"; };
 		C0143D8B3DFD5CF13655EB9FE3933F29 /* Pods-Up2Dater_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Up2Dater_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Up2Dater; path = Up2Dater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8B6487A2858CC55001E05F2 /* CheckerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckerError.swift; path = Up2Dater/Classes/CheckerError.swift; sourceTree = "<group>"; };
-		D8B6487B2858CC55001E05F2 /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestInfo.swift; path = Up2Dater/Classes/RequestInfo.swift; sourceTree = "<group>"; };
-		D8B6487C2858CC55001E05F2 /* StoreResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreResult.swift; path = Up2Dater/Classes/StoreResult.swift; sourceTree = "<group>"; };
-		D8B6487D2858CC55001E05F2 /* AppStoreInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoreInfo.swift; path = Up2Dater/Classes/AppStoreInfo.swift; sourceTree = "<group>"; };
-		D8B6487E2858CC55001E05F2 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStore.swift; path = Up2Dater/Classes/AppStore.swift; sourceTree = "<group>"; };
+		D8B6487A2858CC55001E05F2 /* LocalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalError.swift; path = Up2Dater/Classes/LocalError.swift; sourceTree = "<group>"; };
+		D8B6487B2858CC55001E05F2 /* RequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestModel.swift; path = Up2Dater/Classes/RequestModel.swift; sourceTree = "<group>"; };
+		D8B6487C2858CC55001E05F2 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = Up2Dater/Classes/ResponseModel.swift; sourceTree = "<group>"; };
+		D8B6487E2858CC55001E05F2 /* Up2Dater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Up2Dater.swift; path = Up2Dater/Classes/Up2Dater.swift; sourceTree = "<group>"; };
+		D8B648862858D27F001E05F2 /* VersionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionModel.swift; path = Up2Dater/Classes/VersionModel.swift; sourceTree = "<group>"; };
 		ECBDCE7F17F7197C025C44B4E1522B03 /* Pods-Up2Dater_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Up2Dater_Tests-dummy.m"; sourceTree = "<group>"; };
 		FE9D6530D2D6B620463AB7D173FA0F93 /* Up2Dater.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Up2Dater.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -126,11 +126,11 @@
 		C9CF5525E507E66FAA6B97585D335D96 /* Up2Dater */ = {
 			isa = PBXGroup;
 			children = (
-				D8B6487E2858CC55001E05F2 /* AppStore.swift */,
-				D8B6487D2858CC55001E05F2 /* AppStoreInfo.swift */,
-				D8B6487A2858CC55001E05F2 /* CheckerError.swift */,
-				D8B6487B2858CC55001E05F2 /* RequestInfo.swift */,
-				D8B6487C2858CC55001E05F2 /* StoreResult.swift */,
+				D8B6487E2858CC55001E05F2 /* Up2Dater.swift */,
+				D8B6487A2858CC55001E05F2 /* LocalError.swift */,
+				D8B648862858D27F001E05F2 /* VersionModel.swift */,
+				D8B6487B2858CC55001E05F2 /* RequestModel.swift */,
+				D8B6487C2858CC55001E05F2 /* ResponseModel.swift */,
 				DE8B84E886304640CD6C19F799A721C0 /* Pod */,
 				F6C51AA45AF49C0CE3464C930CCE9263 /* Support Files */,
 			);
@@ -312,11 +312,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B648812858CC55001E05F2 /* StoreResult.swift in Sources */,
-				D8B648822858CC55001E05F2 /* AppStoreInfo.swift in Sources */,
-				D8B6487F2858CC55001E05F2 /* CheckerError.swift in Sources */,
-				D8B648832858CC55001E05F2 /* AppStore.swift in Sources */,
-				D8B648802858CC55001E05F2 /* RequestInfo.swift in Sources */,
+				D8B648812858CC55001E05F2 /* ResponseModel.swift in Sources */,
+				D8B6487F2858CC55001E05F2 /* LocalError.swift in Sources */,
+				D8B648872858D27F001E05F2 /* VersionModel.swift in Sources */,
+				D8B648832858CC55001E05F2 /* Up2Dater.swift in Sources */,
+				D8B648802858CC55001E05F2 /* RequestModel.swift in Sources */,
 				2C6A6F7A619204C934F645CE72A3FFD5 /* Pods-Up2Dater_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
