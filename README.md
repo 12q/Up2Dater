@@ -1,13 +1,8 @@
 # Up2Dater
 
-[![CI Status](https://img.shields.io/travis/12q/Up2Dater.svg?style=flat)](https://travis-ci.org/12q/Up2Dater)
 [![Version](https://img.shields.io/cocoapods/v/Up2Dater.svg?style=flat)](https://cocoapods.org/pods/Up2Dater)
 [![License](https://img.shields.io/cocoapods/l/Up2Dater.svg?style=flat)](https://cocoapods.org/pods/Up2Dater)
 [![Platform](https://img.shields.io/cocoapods/p/Up2Dater.svg?style=flat)](https://cocoapods.org/pods/Up2Dater)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
@@ -23,48 +18,45 @@ pod 'Up2Dater'
 ```
 
 ## Usage
-```
+```swift
 import Up2Dater
 
-/// configure
-func checkAvailableUpdate() {
-    let service = Up2Dater()
-    service.isNewVersionAvailable { result in
-        switch result {
-            case.success(let model):
-                guard let version = model else { return }
-                DispatchQueue.main.async { [weak self] in
+    func checkNewVersion() {
+        let versionManager = AppStoreVersionManager()
+        versionManager.checkNewVersionAfter { [weak self] result in
+            switch result {
+                case .success(let version):
+                    guard let version = version else { return }
                     self?.presentUpdateAlert(for: version)
-                }
-            case .failure(let error):
-                print(error.description)
+                case .failure(let error):
+                    Logger.log(error.description)
+            }
         }
     }
-}
-
-/// present alert
-func presentUpdateAlert(for newVersion: VersionModel) {
-    let alertTitle = "version: \(newVersion.version) is available"
-    let message = """
-        Release Notes:
-        \(newVersion.releaseNotes)
-    """
     
-    let alert = UIAlertController(
-        title: alertTitle,
-        message: message,
-        preferredStyle: .alert
-    )
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-    let updateAction = UIAlertAction(title: "Update", style: .default) { _ in
-        if let url = URL(string: newVersion.appStorePath) {
-            UIApplication.shared.open(url)
+    func presentUpdateAlert(for appStoreVersion: AppStoreVersion) {
+        let alertTitle = "Version: \(appStoreVersion.version) is available"
+        let message = """
+            Release Notes:
+            \(appStoreVersion.releaseNotes)
+        """
+        let alert = UIAlertController(
+            title: alertTitle,
+            message: message,
+            preferredStyle: .alert
+        )
+        let cancelAction = UIAlertAction(title: "Skip", style: .cancel) { [weak self] _ in
+            self?.versionManager.setSkipVersion(appStoreVersion.version)
         }
+        let updateAction = UIAlertAction(title: "Update", style: .default) { _ in
+            if let url = URL(string: appStoreVersion.appStorePath) {
+                UIApplication.shared.open(url)
+            }
+        }
+        alert.addAction(updateAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
-    alert.addAction(updateAction)
-    alert.addAction(cancelAction)
-    present(alert, animated: true)
-}
 ```
 that's all 🙂
 

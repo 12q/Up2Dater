@@ -11,11 +11,12 @@
 		2C7076602269B8E2B3DE926153767827 /* Pods-Up2Dater_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7916B2256146DEAB64A07A0EFE2EA184 /* Pods-Up2Dater_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56BB602A729A40748CE9868BC5505816 /* Up2Dater-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F87B8042A6CC0C7CCCBF3C3006DBC0 /* Up2Dater-dummy.m */; };
 		ACFABD7532C461615D99CA68874AB126 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D8B6487F2858CC55001E05F2 /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487A2858CC55001E05F2 /* LocalError.swift */; };
-		D8B648802858CC55001E05F2 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487B2858CC55001E05F2 /* RequestModel.swift */; };
-		D8B648812858CC55001E05F2 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487C2858CC55001E05F2 /* ResponseModel.swift */; };
-		D8B648832858CC55001E05F2 /* Up2Dater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487E2858CC55001E05F2 /* Up2Dater.swift */; };
-		D8B648872858D27F001E05F2 /* VersionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B648862858D27F001E05F2 /* VersionModel.swift */; };
+		D886CC31285E24790094FC92 /* LocalBundleInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D886CC30285E24790094FC92 /* LocalBundleInfoBuilder.swift */; };
+		D8B6487F2858CC55001E05F2 /* AppStoreVersionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487A2858CC55001E05F2 /* AppStoreVersionError.swift */; };
+		D8B648802858CC55001E05F2 /* LocalBundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487B2858CC55001E05F2 /* LocalBundleInfo.swift */; };
+		D8B648812858CC55001E05F2 /* AppStoreVersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487C2858CC55001E05F2 /* AppStoreVersionResponse.swift */; };
+		D8B648832858CC55001E05F2 /* AppStoreVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6487E2858CC55001E05F2 /* AppStoreVersionManager.swift */; };
+		D8B648872858D27F001E05F2 /* AppStoreVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B648862858D27F001E05F2 /* AppStoreVersion.swift */; };
 		EE5064B806879F5D96820011FC187A1C /* Up2Dater-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA300027B3AD4D7CC130B0755002A127 /* Up2Dater-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDCD15B2CBA7903E2859604B587986C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -51,12 +52,13 @@
 		A141C0E0747535CFA51CED6F3DB4591A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA300027B3AD4D7CC130B0755002A127 /* Up2Dater-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Up2Dater-umbrella.h"; sourceTree = "<group>"; };
 		C0143D8B3DFD5CF13655EB9FE3933F29 /* Pods-Up2Dater_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Up2Dater_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Up2Dater; path = Up2Dater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8B6487A2858CC55001E05F2 /* LocalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalError.swift; path = Up2Dater/Classes/LocalError.swift; sourceTree = "<group>"; };
-		D8B6487B2858CC55001E05F2 /* RequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestModel.swift; path = Up2Dater/Classes/RequestModel.swift; sourceTree = "<group>"; };
-		D8B6487C2858CC55001E05F2 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = Up2Dater/Classes/ResponseModel.swift; sourceTree = "<group>"; };
-		D8B6487E2858CC55001E05F2 /* Up2Dater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Up2Dater.swift; path = Up2Dater/Classes/Up2Dater.swift; sourceTree = "<group>"; };
-		D8B648862858D27F001E05F2 /* VersionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionModel.swift; path = Up2Dater/Classes/VersionModel.swift; sourceTree = "<group>"; };
+		C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Up2Dater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D886CC30285E24790094FC92 /* LocalBundleInfoBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalBundleInfoBuilder.swift; path = Up2Dater/Classes/LocalBundleInfoBuilder.swift; sourceTree = "<group>"; };
+		D8B6487A2858CC55001E05F2 /* AppStoreVersionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoreVersionError.swift; path = Up2Dater/Classes/AppStoreVersionError.swift; sourceTree = "<group>"; };
+		D8B6487B2858CC55001E05F2 /* LocalBundleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalBundleInfo.swift; path = Up2Dater/Classes/LocalBundleInfo.swift; sourceTree = "<group>"; };
+		D8B6487C2858CC55001E05F2 /* AppStoreVersionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoreVersionResponse.swift; path = Up2Dater/Classes/AppStoreVersionResponse.swift; sourceTree = "<group>"; };
+		D8B6487E2858CC55001E05F2 /* AppStoreVersionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoreVersionManager.swift; path = Up2Dater/Classes/AppStoreVersionManager.swift; sourceTree = "<group>"; };
+		D8B648862858D27F001E05F2 /* AppStoreVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoreVersion.swift; path = Up2Dater/Classes/AppStoreVersion.swift; sourceTree = "<group>"; };
 		ECBDCE7F17F7197C025C44B4E1522B03 /* Pods-Up2Dater_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Up2Dater_Tests-dummy.m"; sourceTree = "<group>"; };
 		FE9D6530D2D6B620463AB7D173FA0F93 /* Up2Dater.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Up2Dater.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -85,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				454D2D6054CEB90C7F0BD45551CF47B4 /* Pods_Up2Dater_Tests.framework */,
-				C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater */,
+				C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,11 +128,12 @@
 		C9CF5525E507E66FAA6B97585D335D96 /* Up2Dater */ = {
 			isa = PBXGroup;
 			children = (
-				D8B6487E2858CC55001E05F2 /* Up2Dater.swift */,
-				D8B6487A2858CC55001E05F2 /* LocalError.swift */,
-				D8B648862858D27F001E05F2 /* VersionModel.swift */,
-				D8B6487B2858CC55001E05F2 /* RequestModel.swift */,
-				D8B6487C2858CC55001E05F2 /* ResponseModel.swift */,
+				D8B6487E2858CC55001E05F2 /* AppStoreVersionManager.swift */,
+				D8B6487C2858CC55001E05F2 /* AppStoreVersionResponse.swift */,
+				D8B6487A2858CC55001E05F2 /* AppStoreVersionError.swift */,
+				D8B648862858D27F001E05F2 /* AppStoreVersion.swift */,
+				D8B6487B2858CC55001E05F2 /* LocalBundleInfo.swift */,
+				D886CC30285E24790094FC92 /* LocalBundleInfoBuilder.swift */,
 				DE8B84E886304640CD6C19F799A721C0 /* Pod */,
 				F6C51AA45AF49C0CE3464C930CCE9263 /* Support Files */,
 			);
@@ -246,7 +249,7 @@
 			);
 			name = Up2Dater;
 			productName = Up2Dater;
-			productReference = C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater */;
+			productReference = C263DA4A43FECAF8099777829F9CA4C0 /* Up2Dater.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -259,6 +262,9 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					8E8A3E14F4BADB247036D703495E883D = {
+						LastSwiftMigration = 1330;
+					};
+					AE78B4EE8854ABA9BD53E946B7ACD83C = {
 						LastSwiftMigration = 1330;
 					};
 				};
@@ -312,12 +318,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B648812858CC55001E05F2 /* ResponseModel.swift in Sources */,
-				D8B6487F2858CC55001E05F2 /* LocalError.swift in Sources */,
-				D8B648872858D27F001E05F2 /* VersionModel.swift in Sources */,
-				D8B648832858CC55001E05F2 /* Up2Dater.swift in Sources */,
-				D8B648802858CC55001E05F2 /* RequestModel.swift in Sources */,
+				D8B648812858CC55001E05F2 /* AppStoreVersionResponse.swift in Sources */,
+				D8B6487F2858CC55001E05F2 /* AppStoreVersionError.swift in Sources */,
+				D8B648872858D27F001E05F2 /* AppStoreVersion.swift in Sources */,
+				D8B648832858CC55001E05F2 /* AppStoreVersionManager.swift in Sources */,
+				D8B648802858CC55001E05F2 /* LocalBundleInfo.swift in Sources */,
 				2C6A6F7A619204C934F645CE72A3FFD5 /* Pods-Up2Dater_Tests-dummy.m in Sources */,
+				D886CC31285E24790094FC92 /* LocalBundleInfoBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2FE8406B0280A0D0B5D298F15F4392F1 /* Up2Dater.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -452,6 +460,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -564,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0009E57A950D0792657E2CDBB43B4AA5 /* Up2Dater.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";

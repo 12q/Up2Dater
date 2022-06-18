@@ -1,13 +1,16 @@
 //
-//  LocalError.swift
+//  AppStoreVersionError.swift
 //  up2dater
 //
 //  Created by 12q on 14.06.2022.
 //
 
 import Foundation
-
-public enum LocalError: Error {
+/**
+ Error types that may happen during request
+ Available `description` string
+ */
+public enum AppStoreVersionError: Error {
     case bundleInfoFailure
     case bundleIdentifierFailure
     case bundleShortVersionFailure
@@ -16,9 +19,10 @@ public enum LocalError: Error {
     case jsonDecodeFailure(Error)
     case invalidResponse
     case noResultInfo
+    case generic(Error)
 }
 
-public extension LocalError {
+public extension AppStoreVersionError {
     var description: String {
         switch self {
             case .bundleInfoFailure:
@@ -37,6 +41,8 @@ public extension LocalError {
                 return "Invalid response. No data to decode."
             case .noResultInfo:
                 return "Invalid response. No data to decode. Check out your identifier indentifier (e.g.: com.yourcompany.app)"
+            case .generic(let error):
+                return "Error: \(error.localizedDescription)"
         }
     }
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Up2Dater'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Keep the app up to date.'
   s.description      = <<-DESC
   Informs about the new available in the AppStore
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/12q/Up2Dater.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/observleer'
   s.swift_versions = '4.2'
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '13.0'
   s.source_files = 'Up2Dater/Classes/**/*'
   
   # s.resource_bundles = {

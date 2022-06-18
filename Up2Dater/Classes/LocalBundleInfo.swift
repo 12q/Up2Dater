@@ -1,5 +1,5 @@
 //
-//  RequestInfo.swift
+//  LocalBundleInfo.swift
 //  up2dater
 //
 //  Created by 12q on 14.06.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RequestModel {
+struct LocalBundleInfo {
     let version: String
     let identifier: String
     
@@ -22,7 +22,7 @@ struct RequestModel {
 
 // MARK: - Constants
 
-extension RequestModel {
+extension LocalBundleInfo {
     enum C {
         static let appStorePath = "http://itunes.apple.com/lookup?bundleId="
     }
