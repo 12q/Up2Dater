@@ -6,7 +6,7 @@
 
 ## Requirements
 
-Your App should be already present in the AppStore 
+Your App should be already presented in the AppStore 
 
 ## Installation
 
@@ -33,7 +33,13 @@ import Up2Dater
             }
         }
     }
-    
+```
+that's all 🙂
+
+
+## Alert Example
+
+```swift
     func presentUpdateAlert(for appStoreVersion: AppStoreVersion) {
         let alertTitle = "Version: \(appStoreVersion.version) is available"
         let message = """
@@ -58,7 +64,75 @@ import Up2Dater
         present(alert, animated: true)
     }
 ```
-that's all 🙂
+
+## Code Structure
+
+`AppStoreVersionManager` 
+
+main class
+
+`public typealias VersionCompletion = (Result<AppStoreVersion?, AppStoreVersionError>) -> ()`
+
+completion block
+
+`public func checkNewVersion(with completion: @escaping VersionCompletion)`
+
+base call
+
+`public func checkNewVersionAfter(deadline: DispatchTime = .now() + 3.0, completion: @escaping  VersionCompletion)`
+
+base call with `dispatch after` to make a delayed call:
+
+`public func setSkipVersion(_ version: String)`
+
+sets the omit version
+
+Base model:
+```swift
+public struct AppStoreVersion {
+    let appId: String
+    public let version: String
+    public let releaseNotes: String
+    public let appStorePath: String
+    
+    init(appId: String, version: String, releaseNotes: String = "") {
+        self.appId = appId
+        self.version = version
+        self.releaseNotes = releaseNotes
+        self.appStorePath = "itms-apps://apple.com/app/id\(appId)"
+    }
+}
+```
+
+Version comparison:
+```swift
+extension AppStoreVersion {
+    func isNewer(then bundleVersion: String) -> Bool {
+        switch version.compare(bundleVersion, options: .numeric) {
+            case .orderedSame,
+                 .orderedAscending:
+                return false
+            case .orderedDescending:
+                return true
+        }
+    }
+}
+```
+
+Error Handling:
+```swift
+public enum AppStoreVersionError: Error {
+    case bundleInfoFailure
+    case bundleIdentifierFailure
+    case bundleShortVersionFailure
+    case appStoreURLFailure
+    case urlRequestFailure(Error)
+    case jsonDecodeFailure(Error)
+    case invalidResponse
+    case noResultInfo
+    case generic(Error)
+}
+```
 
 ## Author
 
