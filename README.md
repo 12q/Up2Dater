@@ -20,9 +20,9 @@ pod 'Up2Dater'
 ## Usage
 ```swift
 import Up2Dater
+    let versionManager = AppStoreVersionManager()
 
     func checkNewVersion() {
-        let versionManager = AppStoreVersionManager()
         versionManager.checkNewVersionAfter { [weak self] result in
             switch result {
                 case .success(let version):
