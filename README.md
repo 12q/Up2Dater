@@ -6,8 +6,14 @@
 
 ## Requirements
 
-Your App should be already present in the AppStore 
+![This is an image](sample-alert.png)
 
+* your App should be already presented in the AppStore (to fetch info from there)
+
+ · `Skip` action stores the `skip version` into the UserDefaults and will not buggin user anymore with this version anymore
+ 
+ · `Update` action  brings the user to the AppStore, to fetch an update
+ 
 ## Installation
 
 Up2Dater is available through [CocoaPods](https://cocoapods.org). To install
@@ -19,21 +25,62 @@ pod 'Up2Dater'
 
 ## Usage
 ```swift
+/// import lib
 import Up2Dater
 
-    func checkNewVersion() {
-        let versionManager = AppStoreVersionManager()
-        versionManager.checkNewVersionAfter { [weak self] result in
-            switch result {
-                case .success(let version):
-                    guard let version = version else { return }
-                    self?.presentUpdateAlert(for: version)
-                case .failure(let error):
-                    Logger.log(error.description)
-            }
+/// allocate instance
+let versionManager = AppStoreVersionManager()
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    observeAppState()
+}
+
+/// connetect app state observer
+func observeAppState() {
+    NotificationCenter.default.addObserver(
+        self,
+        selector: #selector(willEnterForeground),
+        name: UIApplication.willEnterForegroundNotification,
+        object: nil
+    )
+}
+
+/// calls every time when app goes foreground
+@objc
+func willEnterForeground() {
+    versionManager.checkNewVersionAfter { [weak self] result in
+        switch result {
+            case .success(let version):
+                guard let version = version else { return }
+                self?.presentUpdateAlert(for: version)
+            case .failure(let error):
+                Logger.log(error.description)
         }
     }
-    
+}
+
+func checkNewVersion() {
+    versionManager.checkNewVersionAfter { [weak self] result in
+        switch result {
+            case .success(let version):
+                guard let version = version else { return }
+                    /// run to main thread
+                    DispatchQueue.main.async {
+                        self?.presentUpdateAlert(for: version)
+                    }
+            case .failure(let error):
+                print(error.description)
+        }
+    }
+}
+```
+that's all 🙂
+
+
+## Alert Example
+
+```swift
     func presentUpdateAlert(for appStoreVersion: AppStoreVersion) {
         let alertTitle = "Version: \(appStoreVersion.version) is available"
         let message = """
@@ -58,7 +105,75 @@ import Up2Dater
         present(alert, animated: true)
     }
 ```
-that's all 🙂
+
+## Code Structure
+
+`AppStoreVersionManager` 
+
+main class
+
+`public typealias VersionCompletion = (Result<AppStoreVersion?, AppStoreVersionError>) -> ()`
+
+completion block
+
+`public func checkNewVersion(with completion: @escaping VersionCompletion)`
+
+base call
+
+`public func checkNewVersionAfter(deadline: DispatchTime = .now() + 3.0, completion: @escaping  VersionCompletion)`
+
+base call with `dispatch after` to make a delayed call:
+
+`public func setSkipVersion(_ version: String)`
+
+sets the omit version
+
+Base model:
+```swift
+public struct AppStoreVersion {
+    let appId: String
+    public let version: String
+    public let releaseNotes: String
+    public let appStorePath: String
+    
+    init(appId: String, version: String, releaseNotes: String = "") {
+        self.appId = appId
+        self.version = version
+        self.releaseNotes = releaseNotes
+        self.appStorePath = "itms-apps://apple.com/app/id\(appId)"
+    }
+}
+```
+
+Version comparison:
+```swift
+extension AppStoreVersion {
+    func isNewer(then bundleVersion: String) -> Bool {
+        switch version.compare(bundleVersion, options: .numeric) {
+            case .orderedSame,
+                 .orderedAscending:
+                return false
+            case .orderedDescending:
+                return true
+        }
+    }
+}
+```
+
+Error Handling:
+```swift
+public enum AppStoreVersionError: Error {
+    case bundleInfoFailure
+    case bundleIdentifierFailure
+    case bundleShortVersionFailure
+    case appStoreURLFailure
+    case urlRequestFailure(Error)
+    case jsonDecodeFailure(Error)
+    case invalidResponse
+    case noResultInfo
+    case generic(Error)
+}
+```
 
 ## Author
 
