@@ -10,7 +10,7 @@
 
 * your App should be already presented in the AppStore (to fetch info from there)
 
- · `Skip` action stores the `skip version` into the UserDefaults and will not buggin user anymore with this version anymore
+ · `Skip` action stores the `skip version` into the UserDefaults and will not buggin user with this version anymore
  
  · `Update` action  brings the user to the AppStore, to fetch an update
  
